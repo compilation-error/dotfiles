@@ -1,0 +1,32 @@
+#!/usr/bin/conky -d -c
+alignment middle_right
+background no
+cpu_avg_samples 2
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+gap_x 165
+gap_y -35
+minimum_size 350
+net_avg_samples 2
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type dock
+own_window_argb_visual yes
+own_window_argb_value 255
+total_run_times 0
+update_interval 1.0
+uppercase no
+use_xft yes
+xftalpha 1
+xftfont Raleway:pixelsize=9
+
+TEXT
+${color gray}${font Raleway:pixelsize=30}${time %A, %B %e}${font}
+${color gray}${offset 18}${font Raleway-Thin:pixelsize=100:weight=thin}${time %l:%M}${font} ${voffset -68}${font Raleway-Thin:pixelsize=68:weight=thin}${time %p}${font}
