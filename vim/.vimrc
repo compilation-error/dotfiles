@@ -23,7 +23,7 @@ syntax on
 set clipboard=unnamed
 set autoindent
 set smartindent
-se tabstop=4
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
