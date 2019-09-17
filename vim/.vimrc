@@ -19,16 +19,26 @@ execute pathogen#infect()
 "let skip_defaults_vim=1
 
 set nocompatible
-syntax enable
+syntax on
 set clipboard=unnamed
 set autoindent
 set smartindent
+se tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set encoding=utf-8
+set autoindent
+set backspace=indent,eol,start
+
 set viminfo='100,h,n~/.vim/viminfo
 
 set ignorecase
 set smartcase
 set hlsearch
 set incsearch
+set showmatch
+
 set laststatus=2
 set number
 set relativenumber
@@ -36,4 +46,5 @@ set list
 set listchars=tab:>\ ,trail:.,extends:#,nbsp:_
 
 let g:airline_theme='bubblegum'
+colorscheme dracula
 
