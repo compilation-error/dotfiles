@@ -9,6 +9,7 @@
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
 runtime! archlinux.vim
+execute pathogen#infect()
 
 " If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
 " Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
@@ -30,6 +31,9 @@ set hlsearch
 set incsearch
 
 set number
+set relativenumber
 set list
 set listchars=tab:>\ ,trail:.,extends:#,nbsp:_
+
+let g:airline_theme='bubblegum'
 
