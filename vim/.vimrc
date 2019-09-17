@@ -29,7 +29,7 @@ set ignorecase
 set smartcase
 set hlsearch
 set incsearch
-
+set laststatus=2
 set number
 set relativenumber
 set list
