@@ -1,0 +1,77 @@
+let mapleader=" "
+
+" Automatically install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync
+endif
+
+" Set up Plugins
+call plug#begin('~/.vim/bundle')
+Plug 'junegunn/vim-plug'
+Plug 'junegunn/goyo.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'PotatoesMaster/i3-vim-syntax'
+call plug#end()
+
+runtime! archlinux.vim
+
+" Basic Settings
+set nocompatible
+syntax on
+filetype plugin indent on
+set number relativenumber
+set laststatus=2
+
+set clipboard=unnamed
+set encoding=utf-8
+set backspace=indent,eol,start
+set splitbelow splitright
+set ruler
+set wildmenu=longest,list,full
+
+set hlsearch
+set incsearch
+set showmatch
+set ignorecase
+set smartcase
+
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+if !&scrolloff
+  set scrolloff=1
+endif
+if !&sidescrolloff
+  set sidescrolloff=5
+endif
+set display+=lastline
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+let g:airline_theme='bubblegum'
+colorscheme dracula
+
+" Change and set mappings
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+map <leader>o :setlocal spell! spelllang=en_us<CR>
+
+" Automatically deletes all trailing whitespace on save.
+autocmd BufWritePre * %s/\s\+$//e
+
+
+" vim:set ft=vim et sw=2:
+
