@@ -2,8 +2,6 @@
 # for use with i3-gapps
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-exec_always "export PATH=$PATH:$HOME/.config/i3/scripts"
-
 # set $mod Mod1
 set $mod Mod4
 
@@ -15,7 +13,6 @@ gaps outer $default_gaps_outer
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:Montserrat 10
-# font pango:DejaVu Sans 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -72,7 +69,8 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+space focus mode_toggle
+bindsym $mod+space exec dmenu_run
 
 # focus the parent container
 bindsym $mod+a focus parent;
@@ -147,24 +145,51 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# TODO: use Xresources here
-set $bg-color          #2f343f
-set $inactive-bg-color   #2f343f
-set $text-color          #f3f4f5
-set $inactive-text-color #676E7D
-set $urgent-bg-color     #E53935
-set $ind #5492e2
+set_from_resource $term_background background #000000
+set_from_resource $term_foreground foreground #ffffff
+set_from_resource $term_color0     color0     #000000
+set_from_resource $term_color1     color1     #111111
+set_from_resource $term_color2     color2     #222222
+set_from_resource $term_color3     color3     #333333
+set_from_resource $term_color4     color4     #444444
+set_from_resource $term_color5     color5     #555555
+set_from_resource $term_color6     color6     #666666
+set_from_resource $term_color7     color7     #777777
+set_from_resource $term_color8     color8     #888888
+set_from_resource $term_color9     color9     #999999
+set_from_resource $term_color10    color10    #AAAAAA
+set_from_resource $term_color11    color11    #BBBBBB
+set_from_resource $term_color12    color12    #CCCCCC
+set_from_resource $term_color13    color13    #DDDDDD
+set_from_resource $term_color14    color14    #EEEEEE
+set_from_resource $term_color15    color15    #FFFFFF
+set_from_resource $term_color16    color16    #adadad
+set_from_resource $term_color99    color99    #2a2a2a
+
+set $bg-color            #282a36
+set $inactive-bg-color   #44475a
+set $text-color          #f8f8f2
+set $inactive-text-color #a8a8a2
+set $urgent-bg-color     #ff79c2
+set $ind                 #8be9fd
+set $highlight           #bd93f9
+
+#set $bg-color            $term_background
+#set $inactive-bg-color   $term_color99
+#set $text-color          $term_foreground
+#set $inactive-text-color $term_foreground
+#set $urgent-bg-color     $term_color16
+#set $ind                 $term_color6
+#set $highlight           $term_color4
 
 hide_edge_borders smart
 # window colors
 #                       border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $ind
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $ind
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $ind
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $ind
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $ind
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          $ind
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 #bar {
 #        status_command i3blocks -c /home/romeet/.config/i3/scripts/i3blocks.conf
 #        colors {
@@ -179,18 +204,18 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-bindsym Ctrl+Shift+Escape exec --no-startup-id i3exit lock, mode "default"
+bindsym Ctrl+Shift+Escape exec --no-startup-id $HOME/.config/i3/scripts/i3exit lock, mode "default"
 
 bindsym $mod+Shift+Escape mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id $HOME/.config/i3/scripts/i3exit lock, mode "default"
+    bindsym s exec --no-startup-id $HOME/.config/i3/scripts/i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id $HOME/.config/i3/scripts/i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id $HOME/.config/i3/scripts/i3exit logout, mode "default"
+    bindsym h exec --no-startup-id $HOME/.config/i3/scripts/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id $HOME/.config/i3/scripts/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id $HOME/.config/i3/scripts/i3exit shutdown, mode "default"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
@@ -198,8 +223,8 @@ mode "$mode_system" {
 
 bindsym Print exec screenshot
 
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b -p ">>>" -nb "$inactive-bg-color" -nf "$inactive-text-color" -sf "$text-color" -fn "Montserrat-10"'
-bindsym $mod+d exec dmenu_run -i -b -p ">>>" -nb "$inactive-bg-color" -nf "$inactive-text-color" -sf "$text-color" -fn 'Montserrat-10' #-sb "$bg-color"
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b -p ">>>" -nb "$bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$text-color" -fn "Montserrat-10"'
+bindsym $mod+d exec dmenu_run -i -b -p ">>>" -nb "$bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$text-color" -fn "Montserrat-10"
 bindsym $mod+z exec rofi -show run -lines 5 -opacity "85" -bw 0 -font "System San Francisco Display 12"
 
 # Pulse Audio controls
@@ -262,24 +287,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-set_from_resource $term_background background
-set_from_resource $term_foreground foreground
-set_from_resource $term_color0     color0
-set_from_resource $term_color1     color1
-set_from_resource $term_color2     color2
-set_from_resource $term_color3     color3
-set_from_resource $term_color4     color4
-set_from_resource $term_color5     color5
-set_from_resource $term_color6     color6
-set_from_resource $term_color7     color7
-set_from_resource $term_color8     color8
-set_from_resource $term_color9     color9
-set_from_resource $term_color10    color10
-set_from_resource $term_color11    color11
-set_from_resource $term_color12    color12
-set_from_resource $term_color13    color13
-set_from_resource $term_color14    color14
-set_from_resource $term_color15    color15
 
 for_window [title="Octopi"] floating enable border normal
 
@@ -301,5 +308,6 @@ exec --no-startup-id compton -f
 exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec --no-startup-id volumeicon
 exec --no-startup-id nm-applet
-exec --no-startup-id clipit
 
+
+# vim:filetype=i3

@@ -8,17 +8,6 @@
 ;=====================================================
 
 [colors]
-;background = #2f343f
-;background-alt = #2f343f
-;foreground = #f3f4f5
-;foreground-alt = #67637d
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #e53935
-;green = #55aa55
-;blue = #5555aa
-;red = #aa5555
-
 background = ${xrdb:background}
 background-alt = ${xrdb:color99}
 foreground = ${xrdb:foreground}
@@ -30,7 +19,7 @@ green = ${xrdb:color2}
 blue = ${xdb:color6}
 red = ${xrdb:color1}
 ;
-[bar/example]
+[bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
