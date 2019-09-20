@@ -8,20 +8,22 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #2f343f
+;background = #2f343f
 background-alt = #2f343f
-;foreground = ${xrdb:color7:#222}
-foreground = #f3f4f5
+;foreground = #f3f4f5
 foreground-alt = #67637d
-primary = #ffb52a
-secondary = #e60053
+;primary = #ffb52a
+;secondary = #e60053
 alert = #e53935
 green = #55aa55
 blue = #5555aa
 red = #aa5555
 
-
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+primary = ${xrdb:color2}
+secondary = ${xrdb:color8}
+;
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
@@ -34,7 +36,7 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3 
+line-size = 3
 line-color = #f00
 
 border-size = 4
@@ -191,7 +193,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format = <label> 
+format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
@@ -340,11 +342,11 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/namemenu]
 type = custom/text
-content = !
+content = 
 content-background = ${colors.background}
 content-foreground = ${colors.foreground}
 
-click-left = exec /home/romeet/.config/i3/scripts/shutdown_menu -c
+click-left = exec $HOME/.config/i3/scripts/shutdown_menu -c
 
 [module/powermenu]
 type = custom/menu
@@ -382,7 +384,7 @@ screenchange-reload = true
 ;compositing-border = over
 
 [global/wm]
-margin-top = 0 
-margin-bottom = 0 
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
