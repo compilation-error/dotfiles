@@ -32,7 +32,7 @@ set backspace=indent,eol,start
 set splitbelow splitright
 set ruler
 set wildmenu
-set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/cache/.viminfo
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/.viminfo
 
 set hlsearch
 set incsearch
