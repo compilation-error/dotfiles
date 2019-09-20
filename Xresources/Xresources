@@ -17,6 +17,7 @@
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
-
+*.color16:    #FFB86C
+*.color99:    #44475A
 ! use fc-list -v | grep to find name
 "Urxvt.font: xft:FiraCode-Retina:size=11"
