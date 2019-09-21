@@ -60,8 +60,11 @@ set display+=lastline
 set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$,space:.
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='deus'
+let g:airline_powerline_fonts = 1
 colorscheme dracula
+let g:dracula_italic = 0
+let g:dracula_colorterm = 0
 
 map Q qq
 
