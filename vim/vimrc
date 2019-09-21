@@ -40,7 +40,7 @@ set splitbelow splitright
 set ruler
 set wildmenu
 set wildmode=longest,full,list
-set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/.viminfo
+set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
 set termguicolors
 
 set hlsearch
