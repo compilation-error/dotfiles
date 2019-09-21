@@ -1,4 +1,4 @@
-let mapleader=" "
+let leader="."
 
 " Automatically install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -7,6 +7,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync
 endif
 
+" https://vimawesome.com/
 " Set up Plugins
 call plug#begin('~/.vim/bundle')
 Plug 'junegunn/vim-plug'
@@ -15,6 +16,12 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'PotatoesMaster/i3-vim-syntax'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'tweekmonster/braceless.vim'
 call plug#end()
 
 runtime! archlinux.vim
@@ -32,6 +39,7 @@ set backspace=indent,eol,start
 set splitbelow splitright
 set ruler
 set wildmenu
+set wildmode=longest,full,list
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/.viminfo
 
 set hlsearch
@@ -48,13 +56,13 @@ set softtabstop=4
 set expandtab
 
 set display+=lastline
-
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
+set list
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$,space:.
 
 let g:airline_theme='bubblegum'
 colorscheme dracula
+
+map Q qq
 
 " Change and set mappings
 map <C-h> <C-w>h
@@ -67,6 +75,8 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
+if has('mouse')
+    set mouse=a
+endif
 
 " vim:set ft=vim et sw=2:
-
