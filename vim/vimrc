@@ -1,4 +1,4 @@
-let leader="."
+let mapleader="\\"
 
 " Automatically install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -69,14 +69,14 @@ let g:dracula_italic = 0
 let g:dracula_colorterm = 0
 colorscheme dracula
 
-map Q qq
-
 " Change and set mappings
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+map <leader>q :q<CR>
+map <leader>w :w<CR>
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Automatically deletes all trailing whitespace on save.
