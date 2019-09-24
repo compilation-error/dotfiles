@@ -30,8 +30,8 @@
 !-- URxvt settings --!
 URxvt.termName:rxvt-unicode-256color
 ! use fc-list -v | grep to find name
-URxvt.background: [90]#282A36
-URxvt.transparent: true
+URxvt.background: [85]#282A36
+!URxvt.transparent: true
 URxvt.scrollBar: false
 URxvt.scrollColor: #FFB86C
 URxvt.blurRadius: 25x25

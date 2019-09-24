@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.vim/bundle')
 Plug 'junegunn/vim-plug'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -40,7 +41,7 @@ set backspace=indent,eol,start
 set splitbelow splitright
 set ruler
 set wildmenu
-set wildmode=longest,full,list
+set wildmode=longest,list,full
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
 
 set switchbuf=usetab,newtab
@@ -66,11 +67,16 @@ set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$,space:.
 
 set t_Co=256
 set termguicolors
+
 let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
+
 let g:dracula_italic = 0
 let g:dracula_colorterm = 0
 colorscheme dracula
+
+let g:limelight_conceal_ctermcfg = 'gray'
+let g:limelight_conceal_guifg = 'DarkGray'
 
 " Change and set mappings
 map <C-h> <C-w>h
@@ -80,13 +86,20 @@ map <C-l> <C-w>l
 
 map <leader>q :q<CR>
 map <leader>w :w<CR>
-
+map <leader>f :Goyo<CR>
+map <leader>l :Limelight!!<CR>
 map <leader>n :NERDTree<CR>
 
 map <F7> :setlocal spell! spelllang=en_us<CR>
-
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
+" Automatically reload Xresouces on save
+autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+
+" Navigating with guides
+    inoremap <leader><leader> <Esc>/<Enter>"_c4l
+    vnoremap <leader><leader> <Esc>/<Enter>"_c4l
+    map <leader><leader> <Esc>/<Enter>"_c4l
 
 " if mouse needs to be enabled
 "if has('mouse')
