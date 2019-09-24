@@ -28,13 +28,13 @@
 ! Xft.hintstyle:  hintfull
 
 !-- URxvt settings --!
-! URxvt.termName:rxvt-unicode-256color
+URxvt.termName:rxvt-unicode-256color
 ! use fc-list -v | grep to find name
 URxvt.background: [90]#282A36
 URxvt.transparent: true
 URxvt.scrollBar: false
 URxvt.scrollColor: #FFB86C
-! URxvt.blurRadius: 10x10
+URxvt.blurRadius: 25x25
 URxvt.cursorColor: #BD93F9
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
@@ -47,7 +47,7 @@ URxvt.cursorUnderline: false
 ! pointerColor:                   color
 ! pointerColor2:                  color
 
-URxvt.font: xft:Fira Code Retina:pixelsize=12
+URxvt.font: xft:Fira Code Retina:pixelsize=12,xft:PowerlineSymbols:pixelsize=12,xft:FontAwesome:pixelsize=12
 URxvt.boldFont: xft:Fira Code Retina:pixelsize=12
 URxvt.italicFont: xft:Fira Code Retina:pixelsize=12
 URxvt.boldItalicFont: xft:Fira Code Retina:pixelsize=12

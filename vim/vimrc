@@ -88,8 +88,9 @@ map <F7> :setlocal spell! spelllang=en_us<CR>
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 
-if has('mouse')
-    set mouse=a
-endif
+" if mouse needs to be enabled
+"if has('mouse')
+"    set mouse=a
+"endif
 
 " vim:set ft=vim et sw=2:

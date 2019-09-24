@@ -43,10 +43,10 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = 'Montserrat':pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Termsynu:pixelsize=10;1
-font-3 = FontAwesome:size=10
+font-0 = "Montserrat:pixelsize=10;1"
+font-1 = "Fira Code Retina:pixelsize=11;1"
+font-2 = "PowerlineSymbols:pixelsize=11;1"
+font-3 = "FontAwesome:size=10;1"
 modules-left = i3
 modules-center = mpd
 modules-right = filesystem backlight-acpi volume memory cpu wlan eth battery temperature date namemenu
@@ -189,19 +189,19 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format = <label>
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = CPU %percentage%%
+label = %percentage%%
 
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-label = MEM %percentage_used%%
+label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
@@ -210,19 +210,20 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #55aa55
-label-connected = NET %essid%
+format-connected-prefix = " "
+label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = #ff5555
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected-prefix = " "
+format-disconnected = <label-disconnected>
+format-disconnected-underline = #ff5555
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = ".    "
+ramp-signal-1 = "..   "
+ramp-signal-2 = "...  "
+ramp-signal-3 = ".... "
+ramp-signal-4 = "....."
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -231,7 +232,7 @@ interface = net0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -251,7 +252,7 @@ date-alt = " %Y-%m-%d"
 time = %I:%M %p %Z
 time-alt = %H:%M:%S %Z
 
-format-prefix = 
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
 
@@ -260,13 +261,14 @@ label = %date% %time%
 [module/volume]
 type = internal/volume
 
+format-prefix = " "
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
+label-volume = "VOL"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = sound muted
+label-muted = "MUTE"
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -291,29 +293,34 @@ battery = BAT1
 adapter = ACAD
 full-at = 98
 
+format-charging-prefix = " "
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.green}
 format-full-underline = #55aa55
 
-label-charging = BAT %percentage%%
-label-discharging = BAT %percentage%%
-label-full = BAT %percentage%%
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = #ffb52a
 animation-charging-framerate = 750
 
 [module/temperature]
@@ -322,17 +329,20 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
+format-prefix = 
 format-underline =${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = TEMP %temperature%
-label-warn = HOT! %temperature%
+label = %temperature%
+label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
 ramp-foreground = ${colors.foreground-alt}
 
 [module/namemenu]
