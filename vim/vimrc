@@ -78,6 +78,10 @@ colorscheme dracula
 let g:limelight_conceal_ctermcfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 
+" Remap capslock to escape within Vim. If not already systemwide
+" au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+" au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+
 " Change and set mappings
 map <C-h> <C-w>h
 map <C-j> <C-w>j

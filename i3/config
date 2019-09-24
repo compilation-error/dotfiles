@@ -295,7 +295,7 @@ for_window [urgent=latest] focus
 
 # Keys
 exec_always xmodmap -e "clear lock" #disable caps lock switch
-exec_always xmodmap -e "keysym Caps_Lock = Hyper_L" #set caps_lock as hyper
+exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as Escape sysemwide
 
 # Identify touchpad using xinput list
 # Identify touchpad props using xinput list-props
