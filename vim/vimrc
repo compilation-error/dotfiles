@@ -97,7 +97,7 @@ map <F7> :setlocal spell! spelllang=en_us<CR>
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 " Automatically reload Xresouces on save
-autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+autocmd BufWritePost *Xresources,*Xdefaults silent! !xrdb %
 
 " Navigating with guides
     inoremap <leader><leader> <Esc>/<Enter>"_c4l
