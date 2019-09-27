@@ -94,7 +94,7 @@ rofi.font: Montserrat 12
 rofi.show-icons: true
 
 ! "New style theme file" Set from: Default
-rofi.theme: .config/rofi/Arc-Dark-mod.rasi
+rofi.theme: .config/rofi/Dracula-mod.rasi
 rofi.color-normal: #F8F8F2
 rofi.color-urgent: #FF5555
 rofi.color-active: #BD93F9
