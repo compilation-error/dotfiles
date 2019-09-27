@@ -223,7 +223,7 @@ mode "$mode_system" {
 }
 
 # Move to Pictures folder does not work!
-bindsym Print exec scrot 'Screenshot %Y%m%d-%H%M%S.png' -e 'mv $f ~/Pictures'; exec dunstify 'Screenshot saved!'
+bindsym Print exec scrot 'Screenshot %Y%m%d-%H%M%S.png' -e 'mv $f ~/Pictures' && exec dunstify 'Screenshot saved!'
 
 bindsym Ctrl+space exec dmenu_run
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b -p ">>>" -nb "$bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$text-color" -fn "Montserrat-10"'
