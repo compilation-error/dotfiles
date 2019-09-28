@@ -34,8 +34,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+;border-size = 4
+;border-color = #00000000
 
 padding-left = 0
 padding-right = 2
@@ -329,7 +329,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-prefix = 
+format-prefix =
 format-underline =${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
