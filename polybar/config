@@ -34,13 +34,13 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
+;border-size = 4
+;border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
+module-margin-left = 2
 module-margin-right = 2
 
 font-0 = "Montserrat:pixelsize=10;1"
@@ -48,13 +48,14 @@ font-1 = "Fira Code Retina:pixelsize=11;1"
 font-2 = "PowerlineSymbols:pixelsize=11;1"
 font-3 = "FontAwesome:size=10;1"
 modules-left = i3
-modules-center = mpd
+;modules-center = mpd
 modules-right = filesystem backlight-acpi volume memory cpu wlan eth battery temperature date namemenu
 
 tray-position = right
-tray-padding = 2
-;tray-transparent = true
+tray-padding = 3
 ;tray-background = #0063ff
+
+dim-value = 0.8
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -259,7 +260,7 @@ format-underline = ${colors.primary}
 label = %date% %time%
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 
 format-prefix = " "
 format-volume = <label-volume> <bar-volume>
@@ -329,13 +330,13 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-prefix = 
+format-prefix =
 format-underline =${colors.primary}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
-label = %temperature%
-label-warn = %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
 ramp-0 = 
@@ -361,9 +362,9 @@ format-spacing = 1
 label-open = POWER
 label-underline = ${colors.primary}
 label-open-foreground = ${colors.primary}
-label-close =  cancel
+label-close = close
 label-close-foreground = ${colors.secondary}
-label-separator = |i
+label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot

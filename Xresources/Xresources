@@ -35,7 +35,7 @@ URxvt.background: [85]#282A36
 ! Fake Transparency
 !URxvt.transparent: true
 !URxvt.shading: 25
-URxvt.blurRadius: 25x25
+!URxvt.blurRadius: 25x25
 
 URxvt.fading: 30
 !URxvt.fadeColor: #000000

@@ -10,6 +10,9 @@ set $default_gaps_outer 2
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
+default_border pixel 2
+default_floating_border pixel 3
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:Montserrat 10
@@ -145,27 +148,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $term_background background #000000
-set_from_resource $term_foreground foreground #ffffff
-set_from_resource $term_color0     color0     #000000
-set_from_resource $term_color1     color1     #111111
-set_from_resource $term_color2     color2     #222222
-set_from_resource $term_color3     color3     #333333
-set_from_resource $term_color4     color4     #444444
-set_from_resource $term_color5     color5     #555555
-set_from_resource $term_color6     color6     #666666
-set_from_resource $term_color7     color7     #777777
-set_from_resource $term_color8     color8     #888888
-set_from_resource $term_color9     color9     #999999
-set_from_resource $term_color10    color10    #AAAAAA
-set_from_resource $term_color11    color11    #BBBBBB
-set_from_resource $term_color12    color12    #CCCCCC
-set_from_resource $term_color13    color13    #DDDDDD
-set_from_resource $term_color14    color14    #EEEEEE
-set_from_resource $term_color15    color15    #FFFFFF
-set_from_resource $term_color16    color16    #adadad
-set_from_resource $term_color99    color99    #2a2a2a
+set_from_resource $background i3wm.background #000000
+set_from_resource $foreground i3wm.foreground #ffffff
+set_from_resource $color0     i3wm.color0     #000000
+set_from_resource $color1     i3wm.color1     #111111
+set_from_resource $color2     i3wm.color2     #222222
+set_from_resource $color3     i3wm.color3     #333333
+set_from_resource $color4     i3wm.color4     #444444
+set_from_resource $color5     i3wm.color5     #555555
+set_from_resource $color6     i3wm.color6     #666666
+set_from_resource $color7     i3wm.color7     #777777
+set_from_resource $color8     i3wm.color8     #888888
+set_from_resource $color9     i3wm.color9     #999999
+set_from_resource $color10    i3wm.color10    #AAAAAA
+set_from_resource $color11    i3wm.color11    #BBBBBB
+set_from_resource $color12    i3wm.color12    #CCCCCC
+set_from_resource $color13    i3wm.color13    #DDDDDD
+set_from_resource $color14    i3wm.color14    #EEEEEE
+set_from_resource $color15    i3wm.color15    #FFFFFF
+set_from_resource $color16    i3wm.color16    #adadad
+set_from_resource $color99    i3wm.color99    #2a2a2a
 
+# TODO: Use from Xresources
 set $bg-color            #282a36
 set $inactive-bg-color   #44475a
 set $text-color          #f8f8f2
@@ -173,14 +177,6 @@ set $inactive-text-color #a8a8a2
 set $urgent-bg-color     #ff79c2
 set $ind                 #8be9fd
 set $highlight           #bd93f9
-
-#set $bg-color            $term_background
-#set $inactive-bg-color   $term_color99
-#set $text-color          $term_foreground
-#set $inactive-text-color $term_foreground
-#set $urgent-bg-color     $term_color16
-#set $ind                 $term_color6
-#set $highlight           $term_color4
 
 hide_edge_borders smart
 # window colors
@@ -293,7 +289,7 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-
+# use xprop to get window properties for use in criteria
 for_window [title="Octopi"] floating enable border normal
 
 for_window [urgent=latest] focus
