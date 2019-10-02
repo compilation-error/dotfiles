@@ -12,3 +12,6 @@ sh $PWD/vim/vim-setup.sh
 
 # install tpm for tmux plugin
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
