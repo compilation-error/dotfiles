@@ -1,0 +1,14 @@
+!-- Rofi Settings --!
+rofi.modi: window,windowcd,run,drun,ssh,combi
+rofi.width: 50
+rofi.lines: 10
+rofi.columns: 1
+rofi.font: Montserrat 12
+rofi.show-icons: true
+
+! "New style theme file" Set from: Default
+rofi.theme: .config/rofi/Dracula-mod.rasi
+rofi.color-normal: #F8F8F2
+rofi.color-urgent: #FF5555
+rofi.color-active: #BD93F9
+rofi.color-window: #282A36

@@ -1,24 +1,7 @@
-! Dracula Xresources palette
-*foreground: #F8F8F2
-*background: #282A36
-*color0:     #000000
-*color8:     #4D4D4D
-*color1:     #FF5555
-*color9:     #FF6E67
-*color2:     #50FA7B
-*color10:    #5AF78E
-*color3:     #F1FA8C
-*color11:    #F4F99D
-*color4:     #BD93F9
-*color12:    #CAA9FA
-*color5:     #FF79C6
-*color13:    #FF92D0
-*color6:     #8BE9FD
-*color14:    #9AEDFE
-*color7:     #BFBFBF
-*color15:    #E6E6E6
-*color16:    #FFB86C
-*color99:    #44475A
+#include ".Xresources.d/nord"
+#include ".Xresources.d/rxvt-unicode"
+#include ".Xresouces.d/rofi"
+
 
 !-- Xft settings -- !
 ! Xft.dpi:        96
@@ -27,75 +10,3 @@
 ! Xft.hinting:    true
 ! Xft.hintstyle:  hintfull
 
-!-- URxvt settings --!
-URxvt.termName:rxvt-unicode
-! True Transparency
-URxvt.depth: 32
-URxvt.background: [85]#282A36
-! Fake Transparency
-!URxvt.transparent: true
-!URxvt.shading: 25
-!URxvt.blurRadius: 25x25
-
-URxvt.fading: 30
-!URxvt.fadeColor: #000000
-
-URxvt.scrollBar: false
-URxvt.scrollColor: #FFB86C
-
-URxvt.cursorColor: #BD93F9
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: false
-!URxvt.tintColor: #FF0000
-! URxvt.visualBell: true
-! troughColor:                    color
-! highlightColor:                 color
-! highlightTextColor:             color
-! cursorColor:                    color
-! cursorColor2:                   color
-! pointerColor:                   color
-! pointerColor2:                  color
-
-! use fc-list -v | grep to find name
-URxvt.font: xft:Fira Code Retina:pixelsize=12,xft:PowerlineSymbols:pixelsize=12,xft:FontAwesome:pixelsize=12
-URxvt.boldFont: xft:Fira Code Retina:pixelsize=12
-URxvt.italicFont: xft:Fira Code Retina:pixelsize=12
-URxvt.boldItalicFont: xft:Fira Code Retina:pixelsize=12
-! URxvt.letterSpace: -1
-
-URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,fullscreen,resize-font
-
-URxvt.clipboard.autocopy: true
-URxvt.keysym.C-c: perl:clipboard:copy
-URxvt.keysym.C-v: perl:clipboard:paste
-
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
-URxvt.url-select.underline: true
-
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 3
-URxvt.tabbed.tab-bg: 0
-
-URxvt.keysym.F11: perl:fullscreen:switch
-
-URxvt.keysym.C-Down:  resize-font:smaller
-URxvt.keysym.C-Up:    resize-font:bigger
-
-!-- Rofi Settings --!
-rofi.modi: window,windowcd,run,drun,ssh,combi
-rofi.width: 50
-rofi.lines: 10
-rofi.columns: 1
-rofi.font: Montserrat 12
-rofi.show-icons: true
-
-! "New style theme file" Set from: Default
-rofi.theme: .config/rofi/Dracula-mod.rasi
-rofi.color-normal: #F8F8F2
-rofi.color-urgent: #FF5555
-rofi.color-active: #BD93F9
-rofi.color-window: #282A36

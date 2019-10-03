@@ -1,7 +1,8 @@
 # setup soft links to config files
 ln -s $PWD/vim/vimrc $HOME/.vimrc
-ln -s $PWD/Xresources/Xresources $HOME/.Xresources
 
+ln -s $PWD/Xresources/Xresources $HOME/.Xresources
+ln -s $PWD/Xresources/Xresources.d $HOME/.Xresources.d
 # Symlink directories to .config
 ln -s $PWD/conky $HOME/.config/conky
 ln -s $PWD/i3 $HOME/.config/i3

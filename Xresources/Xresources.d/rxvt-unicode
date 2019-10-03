@@ -1,0 +1,57 @@
+!-- URxvt settings --!
+URxvt.termName:rxvt-unicode
+! True Transparency
+URxvt.depth: 32
+URxvt.background: [85]#282A36
+! Fake Transparency
+!URxvt.transparent: true
+!URxvt.shading: 25
+!URxvt.blurRadius: 25x25
+
+URxvt.fading: 30
+!URxvt.fadeColor: #000000
+
+URxvt.scrollBar: false
+URxvt.scrollColor: #FFB86C
+
+URxvt.cursorColor: #BD93F9
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+!URxvt.tintColor: #FF0000
+! URxvt.visualBell: true
+! troughColor:                    color
+! highlightColor:                 color
+! highlightTextColor:             color
+! cursorColor:                    color
+! cursorColor2:                   color
+! pointerColor:                   color
+! pointerColor2:                  color
+
+! use fc-list -v | grep to find name
+URxvt.font: xft:Fira Code Retina:pixelsize=12,xft:PowerlineSymbols:pixelsize=12,xft:FontAwesome:pixelsize=12
+URxvt.boldFont: xft:Fira Code Retina:pixelsize=12
+URxvt.italicFont: xft:Fira Code Retina:pixelsize=12
+URxvt.boldItalicFont: xft:Fira Code Retina:pixelsize=12
+! URxvt.letterSpace: -1
+
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,fullscreen,resize-font
+
+URxvt.clipboard.autocopy: true
+URxvt.keysym.C-c: perl:clipboard:copy
+URxvt.keysym.C-v: perl:clipboard:paste
+
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 3
+URxvt.tabbed.tab-bg: 0
+
+URxvt.keysym.F11: perl:fullscreen:switch
+
+URxvt.keysym.C-Down:  resize-font:smaller
+URxvt.keysym.C-Up:    resize-font:bigger
