@@ -8,7 +8,7 @@ rofi.show-icons: true
 
 ! "New style theme file" Set from: Default
 rofi.theme: .config/rofi/Dracula-mod.rasi
-rofi.color-normal: #F8F8F2
-rofi.color-urgent: #FF5555
-rofi.color-active: #BD93F9
-rofi.color-window: #282A36
+rofi.color-normal: nord5
+rofi.color-urgent: nord11
+rofi.color-active: nord10
+rofi.color-window: nord0

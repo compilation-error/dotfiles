@@ -10,9 +10,9 @@ set $default_gaps_outer 2
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-default_border pixel 2
-default_floating_border pixel 3
-new_window pixel 2
+default_border pixel 1
+default_floating_border pixel 2
+new_window pixel 1
 new_float normal
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -150,35 +150,14 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set_from_resource $background i3wm.background #000000
-set_from_resource $foreground i3wm.foreground #ffffff
-set_from_resource $color0     i3wm.color0     #000000
-set_from_resource $color1     i3wm.color1     #111111
-set_from_resource $color2     i3wm.color2     #222222
-set_from_resource $color3     i3wm.color3     #333333
-set_from_resource $color4     i3wm.color4     #444444
-set_from_resource $color5     i3wm.color5     #555555
-set_from_resource $color6     i3wm.color6     #666666
-set_from_resource $color7     i3wm.color7     #777777
-set_from_resource $color8     i3wm.color8     #888888
-set_from_resource $color9     i3wm.color9     #999999
-set_from_resource $color10    i3wm.color10    #AAAAAA
-set_from_resource $color11    i3wm.color11    #BBBBBB
-set_from_resource $color12    i3wm.color12    #CCCCCC
-set_from_resource $color13    i3wm.color13    #DDDDDD
-set_from_resource $color14    i3wm.color14    #EEEEEE
-set_from_resource $color15    i3wm.color15    #FFFFFF
-set_from_resource $color16    i3wm.color16    #adadad
-set_from_resource $color99    i3wm.color99    #2a2a2a
-
-# TODO: Use from Xresources
-set $bg-color            #282a36
-set $inactive-bg-color   #44475a
-set $text-color          #f8f8f2
-set $inactive-text-color #a8a8a2
-set $urgent-bg-color     #ff79c2
-set $ind                 #8be9fd
-set $highlight           #bd93f9
+set_from_resource $bg-color             i3wm.color8
+set_from_resource $inactive-bg-color    i3wm.color8
+set_from_resource $text-color           i3wm.foreground
+set_from_resource $inactive-text-color  i3wm.foreground
+set_from_resource $urgent-bg-color      i3wm.color1
+set_from_resource $ind                  i3wm.color6
+set_from_resource $highlight            i3wm.color6
+set_from_resource $highlight-text       i3wm.color0
 
 hide_edge_borders smart
 # window colors
@@ -224,8 +203,8 @@ mode "$mode_system" {
 bindsym Print exec scrot 'Screenshot %Y%m%d-%H%M%S.png' -e 'mv $f ~/Pictures' && exec dunstify 'Screenshot saved!'
 
 bindsym Ctrl+space exec dmenu_run
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b -p ">>>" -nb "$bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$text-color" -fn "Montserrat-10"'
-bindsym $mod+d exec dmenu_run -i -b -p ">>>" -nb "$bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$text-color" -fn "Montserrat-10"
+bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -b -p ">>>" -nb "$inactive-bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$highlight-text" -fn "Montserrat-10"'
+bindsym $mod+d exec dmenu_run -i -b -p ">>>" -nb "$inactive-bg-color" -nf "$inactive-text-color" -sb "$highlight" -sf "$highlight-text" -fn "Montserrat-10"
 
 bindsym $mod+space exec rofi -show drun -display-drun "Apps"
 bindsym $mod+Shift+Ctrl+space exec rofi -show run -display-run "Run"

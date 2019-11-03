@@ -9,15 +9,17 @@
 
 [colors]
 background = ${xrdb:background}
-background-alt = ${xrdb:color99}
+background-alt = ${xrdb:color1}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:foreground}
-primary = ${xrdb:color4}
-secondary = ${xrdb:color5}
-alert = ${xrdb:color16}
-green = ${xrdb:color2}
-blue = ${xdb:color6}
-red = ${xrdb:color1}
+primary = ${xrdb:color8}
+secondary = ${xrdb:color10}
+alert = ${xrdb:color15}
+green = ${xrdb:color14}
+blue = ${xdb:color9}
+red = ${xrdb:color11}
+;
+; TODO: Replace all fixed colors with colors from xresources or defined colors
 ;
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -47,7 +49,7 @@ font-0 = "Montserrat:pixelsize=10;1"
 font-1 = "Fira Code Retina:pixelsize=11;1"
 font-2 = "PowerlineSymbols:pixelsize=11;1"
 font-3 = "FontAwesome:size=10;1"
-modules-left = i3
+modules-left = i3 xwindow
 ;modules-center = mpd
 modules-right = filesystem backlight-acpi volume memory cpu wlan eth battery temperature date namemenu
 
@@ -70,7 +72,7 @@ dim-value = 0.8
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:100:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -176,7 +178,7 @@ bar-indicator-foreground = #ff
 bar-indicator-font = 2
 bar-fill = ─
 bar-fill-font = 2
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.primary}
 bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}

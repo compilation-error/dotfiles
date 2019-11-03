@@ -1,6 +1,7 @@
 #include ".Xresources.d/nord"
+
 #include ".Xresources.d/rxvt-unicode"
-#include ".Xresouces.d/rofi"
+#include ".Xresources.d/rofi"
 
 
 !-- Xft settings -- !
