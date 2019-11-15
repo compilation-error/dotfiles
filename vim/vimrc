@@ -108,8 +108,8 @@ autocmd BufWritePost *Xresources,*Xdefaults silent! !xrdb %
     map <leader><leader> <Esc>/<Enter>"_c4l
 
 " if mouse needs to be enabled
-if has('mouse')
-    set mouse=a
-endif
+"if has('mouse')
+"    set mouse=a
+"endif
 
 " vim:set ft=vim et sw=2:
