@@ -33,6 +33,7 @@ runtime! archlinux.vim
 set nocompatible
 syntax on
 filetype plugin indent on
+set path+=**
 set number relativenumber
 set laststatus=2
 set showcmd
