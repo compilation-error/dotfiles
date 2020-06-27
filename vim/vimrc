@@ -20,11 +20,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'tweekmonster/braceless.vim'
+"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-fugitive'
+"Plug 'tweekmonster/braceless.vim'
 call plug#end()
 
 runtime! archlinux.vim

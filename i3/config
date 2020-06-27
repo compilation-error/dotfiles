@@ -275,7 +275,7 @@ for_window [urgent=latest] focus
 
 for_window [title="File Transfer*"] floating enable
 for_window [class="GParted"] floating enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable  border normal
 for_window [class="octopi"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 # Keys
