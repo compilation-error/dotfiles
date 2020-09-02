@@ -45,7 +45,7 @@ set ruler
 set wildmenu
 set wildmode=longest,list,full
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
-
+set confirm
 set switchbuf=usetab,newtab
 set backup
 "set backupext=.bak
