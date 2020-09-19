@@ -1,5 +1,6 @@
 [ActivityManager][Global Shortcuts]
 switch-to-activity-833cffe0-e6f2-4b4a-ad68-991f183521d7=
+switch-to-activity-88aefb21-1c98-4696-9be0-3a2f948a2582=
 
 [KDE Keyboard Layout Switcher][Global Shortcuts]
 Switch keyboard layout to English (US)=
@@ -18,6 +19,7 @@ Show System Activity=Ctrl+Esc
 display=Display; Meta+P
 
 [khotkeys][Global Shortcuts]
+{4367dfd9-1889-4ad7-b111-6308576b1095}=Ctrl+Alt+T; Meta+Shift+Return
 {bfba6f21-fa7c-4b48-8b45-4bc0e51b5cfe}=Ctrl+Alt+T; Meta+Shift+Return
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=
 
@@ -37,11 +39,11 @@ mute=Volume Mute
 
 [krunner.desktop][Global Shortcuts]
 RunClipboard=Alt+Shift+F2
-_launch=Meta+Space; Alt+F2; Search
+_launch=Alt+F2; Search; Meta+Space
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown
-Lock Session=Screensaver; Meta+L; Meta+Ctrl+Q
+Lock Session=Screensaver; Meta+Ctrl+Q; Meta+L
 Log Out=Ctrl+Alt+Del; Meta+Shift+Q
 Log Out Without Confirmation=Ctrl+Alt+Shift+Del
 Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp
@@ -52,13 +54,13 @@ Cube=Ctrl+F11
 Cylinder=Ctrl+F6
 Decrease Opacity=
 Expose=Ctrl+F9
-ExposeAll=Alt+`; Launch (C)
+ExposeAll=Ctrl+F10; Launch (C)
 ExposeClass=Ctrl+F7
 FlipSwitchAll=
 FlipSwitchCurrent=
 Increase Opacity=
 Invert Screen Colors=
-Kill Window=Ctrl+Alt+Esc; Meta+Shift+Esc; Meta+Alt+Q
+Kill Window=Meta+Alt+Q; Ctrl+Alt+Esc; Meta+Shift+Esc
 Krohnkite: Cycle Layout=
 Krohnkite: Decrease=Meta+D
 Krohnkite: Down/Next=Meta+J
@@ -78,7 +80,7 @@ Krohnkite: Next Layout=Meta+\\
 Krohnkite: Previous Layout=Meta+|
 Krohnkite: Quarter Layout=
 Krohnkite: Right=
-Krohnkite: Set master=Meta+Return
+Krohnkite: Set master=
 Krohnkite: Shrink Height=Meta+Ctrl+K
 Krohnkite: Shrink Width=Meta+Ctrl+H
 Krohnkite: Spread Layout=
@@ -92,17 +94,17 @@ MoveZoomDown=
 MoveZoomLeft=
 MoveZoomRight=
 MoveZoomUp=
-Parachute=Ctrl+F1; Meta+`
+Parachute=
 Remove Window From Group=
 Setup Window Shortcut=
 Show Desktop=
-ShowDesktopGrid=Ctrl+F8; Ctrl+`
+ShowDesktopGrid=Ctrl+F8
 Sphere=Ctrl+F5
 Suspend Compositing=Alt+Shift+F12
 Switch One Desktop Down=Meta+Shift+J; Meta+Shift+Down
-Switch One Desktop Up=Meta+Shift+Up; Meta+Shift+K
+Switch One Desktop Up=Meta+Shift+K; Meta+Shift+Up
 Switch One Desktop to the Left=Meta+Shift+H; Meta+Shift+Left
-Switch One Desktop to the Right=Meta+Shift+Right; Meta+Shift+L
+Switch One Desktop to the Right=Meta+Shift+L; Meta+Shift+Right
 Switch Window Down=Meta+Alt+Down
 Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
@@ -152,13 +154,13 @@ Walk Through Windows=Alt+Tab
 Walk Through Windows (Reverse)=Alt+Shift+Backtab
 Walk Through Windows Alternative=
 Walk Through Windows Alternative (Reverse)=
-Walk Through Windows of Current Application=
-Walk Through Windows of Current Application (Reverse)=Alt+~
+Walk Through Windows of Current Application=Ctrl+F2
+Walk Through Windows of Current Application (Reverse)=Ctrl+Shift+F2
 Walk Through Windows of Current Application Alternative=
 Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=
 Window Below Other Windows=
-Window Close=Meta+Esc; Alt+F4
+Window Close=Alt+F4; Meta+Esc
 Window Fullscreen=F11
 Window Grow Horizontal=
 Window Grow Vertical=
@@ -330,10 +332,19 @@ activate task manager entry 6=
 activate task manager entry 7=
 activate task manager entry 8=
 activate task manager entry 9=
+activate widget 3=Alt+F1
+clear-history=
+clipboard_action=Ctrl+Alt+X
+cycleNextAction=
+cyclePrevAction=
+edit_clipboard=
 manage activities=Meta+Q
-next activity=Meta+Tab
-previous activity=Meta+Shift+Tab
+next activity=
+previous activity=
+repeat_action=Ctrl+Alt+R
 show dashboard=Ctrl+F12
+show-barcode=
+show-on-mouse-pos=
 stop current activity=
 switch to next activity=
 switch to previous activity=
