@@ -85,6 +85,8 @@ colorscheme nord
 let g:limelight_conceal_ctermcfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 
+let g:nord_comment_brightness = 15
+
 " Remap capslock to escape within Vim. If not already systemwide
 " au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 " au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
