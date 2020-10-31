@@ -61,8 +61,8 @@ set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
-"set softtabstop=4
-"set expandtab
+set softtabstop=4
+set expandtab
 
 set display+=lastline
 set list
@@ -119,4 +119,4 @@ autocmd BufWritePost *Xresources,*Xdefaults silent! !xrdb %
 "    set mouse=a
 "endif
 
-" vim:set ft=vim et sw=2:
+" vim:set ft=vim  sw=2 et:
