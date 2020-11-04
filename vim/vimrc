@@ -113,7 +113,7 @@ nnoremap <leader>f :Goyo<CR>
 nnoremap <leader>l :Limelight!!<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>t :term ++close<CR>
-nnoremap <leader>] :!ctags -R
+nnoremap <leader>] :!ctags -R<CR><CR>
 
 nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
 nnoremap <F2> :term ++close<CR>
