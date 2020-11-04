@@ -1,3 +1,5 @@
+
+" set leader key to backslash explicitly
 let mapleader="\\"
 
 " Automatically install vim-plug
@@ -19,13 +21,11 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'PotatoesMaster/i3-vim-syntax'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
-"Plug 'tpope/vim-surround'
-"Plug 'tpope/vim-fugitive'
-"Plug 'tweekmonster/braceless.vim'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 runtime! archlinux.vim
@@ -34,28 +34,37 @@ runtime! archlinux.vim
 set nocompatible
 syntax on
 filetype plugin indent on
+
+set encoding=utf-8
+
 set path+=**
 set number relativenumber
 set laststatus=2
-set showcmd
-set clipboard=unnamed
-set encoding=utf-8
-set backspace=indent,eol,start
-set splitbelow splitright
+set showtabline=2
 set ruler
 set wildmenu
 set wildmode=longest,list,full
+set showcmd
+" set showmode
+
+set clipboard=unnamed
+set backspace=indent,eol,start
+set splitbelow splitright
 set viminfo=%,<800,'10,/50,:100,h,f0,n~/.vim/viminfo
-set confirm
 set switchbuf=usetab,newtab
+
 set backup
-"set backupext=.bak
 set confirm
+
 set hlsearch
 set incsearch
 set showmatch
 set ignorecase
 set smartcase
+
+set foldcolumn=2
+set foldenable
+set foldmethod=manual
 
 set autoindent
 set smartindent
@@ -67,56 +76,59 @@ set expandtab
 set display+=lastline
 set list
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+,eol:$,space:.
-"set showmode
 set showbreak=+++\
-set showtabline=2
+
 set t_Co=256
 
+" Theme Settings
 "let g:airline_theme='deus' "for dracula theme
 "let g:airline_theme='bubblegum' "for nord theme
 let g:airline_theme='base16' "for nord theme
 let g:airline_powerline_fonts = 1
 
+"colorscheme dracula
 "let g:dracula_italic = 0
 "let g:dracula_colorterm = 0
-"colorscheme dracula
 colorscheme nord
+let g:nord_comment_brightness = 15
 
+" Plugin/Tool Settings
 let g:limelight_conceal_ctermcfg = 'gray'
 let g:limelight_conceal_guifg = 'DarkGray'
 
-let g:nord_comment_brightness = 15
-
+" Key Mapping/Settings
 " Remap capslock to escape within Vim. If not already systemwide
 " au VimEnter * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 " au VimLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
-" Change and set mappings
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-map <leader>q :q<CR>
-map <leader>w :w<CR>
-map <leader>f :Goyo<CR>
-map <leader>l :Limelight!!<CR>
-map <leader>n :NERDTree<CR>
+" normal mode mappings for tools
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
+nnoremap <leader>f :Goyo<CR>
+nnoremap <leader>l :Limelight!!<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>t :term ++close<CR>
+nnoremap <leader>] :!ctags -R
 
-map <F7> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F7> :setlocal spell! spelllang=en_us<CR>
+nnoremap <F2> :term ++close<CR>
+
+" AutoCmd Settings
 " Automatically deletes all trailing whitespace on save.
 autocmd BufWritePre * %s/\s\+$//e
 " Automatically reload Xresouces on save
 autocmd BufWritePost *Xresources,*Xdefaults silent! !xrdb %
 
-" Navigating with guides
-    inoremap <leader><leader> <Esc>/<Enter>"_c4l
-    vnoremap <leader><leader> <Esc>/<Enter>"_c4l
-    map <leader><leader> <Esc>/<Enter>"_c4l
-
+" Navigation/Mouse Settings
 " if mouse needs to be enabled
 "if has('mouse')
 "    set mouse=a
 "endif
 
-" vim:set ft=vim  sw=2 et:
+" Modeline
+" vim: set ft=vim sw=2 et:
