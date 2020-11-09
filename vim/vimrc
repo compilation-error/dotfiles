@@ -26,6 +26,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'vimwiki/vimwiki'
+Plug 'unblevable/quick-scope'
 call plug#end()
 
 runtime! archlinux.vim
@@ -90,7 +92,7 @@ let g:airline_powerline_fonts = 1
 "let g:dracula_italic = 0
 "let g:dracula_colorterm = 0
 colorscheme nord
-let g:nord_comment_brightness = 15
+" let g:nord_comment_brightness = 15
 
 " Plugin/Tool Settings
 let g:limelight_conceal_ctermcfg = 'gray'
