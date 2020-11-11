@@ -88,6 +88,13 @@ set t_Co=256
 let g:airline_theme='base16' "for nord theme
 let g:airline_powerline_fonts = 1
 
+" Change highlighting for quickscope
+augroup qs_colors
+  autocmd!
+  autocmd ColorScheme * highlight QuickScopePrimary ctermfg=5 cterm=underline guifg='#800080' gui=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary ctermfg=3 cterm=underline guifg='#808000' gui=underline
+augroup END
+
 "colorscheme dracula
 "let g:dracula_italic = 0
 "let g:dracula_colorterm = 0
@@ -132,5 +139,4 @@ autocmd BufWritePost *Xresources,*Xdefaults silent! !xrdb %
 "    set mouse=a
 "endif
 
-" Modeline
 " vim: set ft=vim sw=2 et:
