@@ -27,8 +27,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-speeddating'
 Plug 'vimwiki/vimwiki'
 Plug 'unblevable/quick-scope'
+Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 runtime! archlinux.vim
